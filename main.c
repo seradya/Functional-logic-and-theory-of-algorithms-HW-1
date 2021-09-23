@@ -6,20 +6,20 @@ int main(void)
 	signed long a = 0;
 	char b = 0;
 	double result = 0.0;
-	scanf("%ld|", &a);
 
+	scanf("%ld|", &a);
 	result += abs(a);
 
-	double multiplier = 0.1; 
+	double multiplier = 0.1; //position of number
 	while((b = getchar()) != '\n')
 	{
 		b -= '0';
 		result += (b*multiplier);
-		multiplier *= 0.1;
+		multiplier *= multiplier;
 	}
 
-	if (a < 0)
-		result *= -1.0;
+	if (a < 0)        //reverse sign
+		result *= -1;
 
 	printf("%lf", result);
 	return 0;
