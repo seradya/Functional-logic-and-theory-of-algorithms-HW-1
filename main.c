@@ -1,23 +1,25 @@
-#include<stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 int main(void)
 {
 	signed long a = 0;
-	char b = 0;
+	signed long b = 0;
 	double result = 0.0;
 
-	scanf("%ld|", &a);
+	scanf("%ld|%ld", &a, &b);
 	result += abs(a);
 
-	double multiplier = 0.1; //position of number
-	while((b = getchar()) != '\n')
+	int count = 0;
+	int c = b;
+	while(c > 0)
 	{
-		b -= '0';
-		result += (b*multiplier);
-		multiplier *= multiplier;
+		count++;
+		c = c/10;
 	}
-
+	
+	result += (b/pow(10, count));
 	if (a < 0)        //reverse sign
 		result *= -1;
 
