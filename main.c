@@ -13,16 +13,16 @@ int main(void)
 
 	int count = 0;
 	int c = b;
-	while(c > 0)
+	while (c > 0)
 	{
 		count++;
-		c = c/10;
+		c = c / 10;
 	}
-	
-	result += (b/pow(10, count));
+
+	result += (b / pow(10, count));
 	if (a < 0)        //reverse sign
 		result *= -1;
 
-	printf("%lf", result);
+	printf("%.10lf", result);
 	return 0;
 }
